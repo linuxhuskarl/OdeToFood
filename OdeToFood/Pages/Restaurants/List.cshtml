@@ -12,7 +12,7 @@
                        asp-for="SearchTerm" />
                 <span class="input-group-append">
                     <button class="btn btn-primary">
-                        Search
+                        <span class="iconify" data-icon="fa-solid:search" data-inline="false"></span>
                     </button>
                 </span>
             </div>
@@ -25,7 +25,7 @@
                 <th>Name</th>
                 <th>Location</th>
                 <th>Cuisine</th>
-                <th>Details</th>
+                <th>Actions</th>
             </tr>
         </thead>
         @foreach (var restaurant in Model.Restaurants)
@@ -41,10 +41,15 @@
                     @restaurant.Cuisine
                 </td>
                 <td>
-                    <a class="btn btn-success"
+                    <a class="btn btn-lg"
                        asp-page="./Detail"
                        asp-route-restaurantId="@restaurant.Id">
-                        +
+                        <span class="iconify" data-icon="fa-solid:search-plus" data-inline="false"></span>
+                    </a>
+                    <a class="btn btn-lg"
+                       asp-page="./Edit"
+                       asp-route-restaurantId="@restaurant.Id">
+                        <span class="iconify" data-icon="fa-solid:edit" data-inline="false"></span>
                     </a>
                 </td>
             </tr>
